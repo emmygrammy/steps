@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
 
 
 const messages = [
@@ -10,16 +11,18 @@ const messages = [
 
 
 function App() {
-  const step = 1;
+ const [step, setStep] = useState(1)
 
-
+  
   function handlePrevious(){
-    alert("previous")
+    if (step >= 1) return
+   setStep( step-1)
 
   }
 
   function handleNext(){
-    alert("next")
+   if (step === 3) return 
+   setStep( step+1)
   }
 
 
